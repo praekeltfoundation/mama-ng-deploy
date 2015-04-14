@@ -1,0 +1,9 @@
+buildscript: scripts/build.sh
+postinstall: scripts/postinstall.sh
+dependencies:
+ - docker.io
+
+pip:
+ - vumi
+ - vxfreeswitch
+ - vxtwinio
