@@ -1,0 +1,26 @@
+# A vxtwinio application.
+
+# application configuration
+
+worker_name: vxtwinio_application
+transport_name: vxfreeswitch_transport
+
+web_path: "/vxtwinio"
+web_port: 9000
+redis_timeout: 3600
+redis_manager:
+  key_prefix: "mama.ng.vxtwinio"
+  db: 1
+
+client_path: "XXX"
+client_method: "POST"
+status_callback_path: "XXX"
+status_callback_method: "XXX"
+
+# middleware configuration
+
+middleware:
+  - logging_mw: vumi.middleware.logging.LoggingMiddleware
+
+logging_mw:
+  log_level: debug
