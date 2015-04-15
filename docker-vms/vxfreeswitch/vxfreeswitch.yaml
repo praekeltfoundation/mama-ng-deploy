@@ -1,0 +1,34 @@
+# A vxfreeswitch connection to the Praekelt Foundation Twilio SIP test
+# account.
+#
+# Note: The parameter freeswitch_auth must be set using an environment
+#       variable.
+
+# transport configuration
+
+worker_name: vxfreeswitch_transport
+transport_name: vxfreeswitch_transport
+
+twisted_endpoint: "tcp:port=8000"
+
+freeswitch_endpoint: "tcp:host=prd-vumi-voice.za.prk-host.net:port=8021"
+originate_parameters:
+  call_url: "sofia/gateway/twilio-pfdev/{to_addr}"
+  context: "public"
+  exten: "+27875503583"
+  cid_name: "vumidev"
+  cid_num: "+27875503583"
+
+to_addr: "+27875503583"
+
+tts_type: "freeswitch"
+tts_fs_engine: "flite"
+tts_fs_voice: "kal"
+
+# middleware configuration
+
+middleware:
+  - logging_mw: vumi.middleware.logging.LoggingMiddleware
+
+logging_mw:
+  log_level: debug
