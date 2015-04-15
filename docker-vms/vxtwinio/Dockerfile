@@ -11,5 +11,5 @@ RUN pip install vxtwinio
 CMD [ \
     "twistd", "-n", "--pidfile=vxtwinio.pid", \
     "vumi_worker", "--worker-class=vxtwinio.TwilioAPIWorker", \
-    "--config=vxtwinio.yaml", \
+    "--config=vxtwinio.yaml" \
 ]
