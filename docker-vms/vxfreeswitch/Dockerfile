@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM python:2.7.9
 MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
 EXPOSE 8000
