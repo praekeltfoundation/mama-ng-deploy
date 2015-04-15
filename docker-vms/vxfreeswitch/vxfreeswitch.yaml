@@ -10,6 +10,7 @@ worker_name: vxfreeswitch_transport
 transport_name: vxfreeswitch_transport
 
 twisted_endpoint: "tcp:port=8000"
+twisted_client_endpoint: "tcp:host=prd-vumi-voice.za.prk-host.net:port=8021"
 
 freeswitch_endpoint: "tcp:host=prd-vumi-voice.za.prk-host.net:port=8021"
 originate_parameters:
