@@ -11,6 +11,6 @@ WORKDIR /app
 CMD [ \
     "twistd", "-n", "--pidfile=vxtwinio.pid", \
     "vumi_worker", "--worker-class=vxtwinio.TwilioAPIWorker", \
-    "--hostname=rabbitmq", \
+    "--hostname=rabbitmq", "--vhost=/", "--username=guest", "--password=guest", \
     "--config=vxtwinio.yaml" \
 ]
