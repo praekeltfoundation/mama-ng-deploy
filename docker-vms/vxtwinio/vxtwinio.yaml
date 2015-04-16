@@ -9,6 +9,7 @@ web_path: "/vxtwinio"
 web_port: 8000
 redis_timeout: 3600
 redis_manager:
+  host: redis
   key_prefix: "mama.ng.vxtwinio"
   db: 1
 
