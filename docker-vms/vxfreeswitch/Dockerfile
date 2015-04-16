@@ -3,7 +3,7 @@ MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
 EXPOSE 8000
 
-RUN pip install vxfreeswitch
+RUN pip install 'vxfreeswitch>=0.1.4'
 
 COPY . /app
 WORKDIR /app
