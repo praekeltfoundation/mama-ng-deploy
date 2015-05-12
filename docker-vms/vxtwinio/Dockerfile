@@ -3,7 +3,7 @@ MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
 EXPOSE 8000
 
-RUN pip install vxtwinio
+RUN pip install vxtwinio==0.0.4
 
 COPY . /app
 WORKDIR /app
