@@ -11,7 +11,6 @@ worker_name: mtech_nigeria_smpp_transport
 transport_name: mtech_nigeria_smpp_transport
 system_type: smpp
 
-twisted_endpoint: 'tcp:host=50.19.233.90:port=2346'
 deliver_short_message_processor_config:
   # Because they lie about their unicode encoding
   data_coding_overrides:
