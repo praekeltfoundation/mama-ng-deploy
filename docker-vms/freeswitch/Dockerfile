@@ -10,14 +10,16 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-key D76EDC7725E010CF
 RUN gpg -a --export D76EDC7725E010CF | apt-key add -
 
 # Install the packages
-RUN apt-get update
-ADD retry_until_pass.sh .
+ADD retry_until_pass.sh ./
+RUN ./retry_until_pass.sh apt-get update
 RUN ./retry_until_pass.sh apt-get install -y freeswitch-meta-vanilla
 
 # Copy configuration files
-RUN cp -a /usr/share/freeswitch/conf/vanilla /etc/freeswitch
 WORKDIR /etc/freeswitch
+RUN cp -a /usr/share/freeswitch/conf/vanilla/. ./
+ADD config ./
+ADD update_config_from_env.sh ./
 
 # Run freeswitch
 EXPOSE 8021
-CMD /usr/bin/freeswitch -c
+CMD ./update_config_from_env.sh && /usr/bin/freeswitch -c
