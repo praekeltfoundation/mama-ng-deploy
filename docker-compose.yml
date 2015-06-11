@@ -36,6 +36,7 @@ nginx:
   links:
     - mamangcontrol:mamangcontrol
     - mamangcontentstore:mamangcontentstore
+    - mamangscheduler:mamangscheduler
 
 mamangdb:
   restart: always
