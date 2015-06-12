@@ -1,0 +1,9 @@
+<include>
+    <gateway name="sip">
+        <param name="username" value="{{username}}"/>
+        <param name="password" value="{{password}}"/>
+        <param name="proxy" value="{{proxy}}"/>
+        <param name="realm" value="{{realm}}"/>
+        <param name="caller-id-in-from" value="true"/>
+    </gateway>
+</include>
