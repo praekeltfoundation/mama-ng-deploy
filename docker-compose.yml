@@ -1,3 +1,11 @@
+nginxproxy:
+  restart: always
+  image: jwilder/nginx-proxy
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+  ports:
+    - "80:80"
+
 mamangcontrol:
   restart: always
   build: ../mama-ng-control
@@ -27,16 +35,6 @@ mamangcontentstore:
     - mamangcontentstoredb:mamangcontentstoredb
   env_file: mama_ng_contentstore.env
   command: /usr/local/bin/gunicorn mama_ng_contentstore.wsgi:application -w 2 -b :8001
-
-nginx:
-  restart: always
-  build: ./docker-vms/nginx/
-  ports:
-    - "80:80"
-  links:
-    - mamangcontrol:mamangcontrol
-    - mamangcontentstore:mamangcontentstore
-    - mamangscheduler:mamangscheduler
 
 mamangdb:
   restart: always
