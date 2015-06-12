@@ -12,4 +12,5 @@ CMD twistd -n --pidfile=mtech_nigeria_smpp_transport.pid \
     --hostname=rabbitmq --vhost=/ --username=guest --password=guest \
     --config=mtech_nigeria_smpp_transport.yaml \
     --set-option=system_id:$SMPP_USERNAME \
-    --set-option=password:$SMPP_PASSWORD
+    --set-option=password:$SMPP_PASSWORD \
+    --set-option=twisted_endpoint:$SMPP_ENDPOINT
