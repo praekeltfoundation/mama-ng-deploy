@@ -1,0 +1,33 @@
+# An SMPP transport for MTech in Nigeria.
+#
+# Environment variables that must be set:
+# SMPP_ENDPOINT = twisted endpoint for smpp server
+# SMPP_USERNAME = username for smpp auth
+# SMPP_PASSWORD = username for smpp password
+#
+# transport configuration
+
+worker_name: mtech_nigeria_smpp_transport
+transport_name: mtech_nigeria_smpp_transport
+system_type: smpp
+
+deliver_short_message_processor_config:
+  # Because they lie about their unicode encoding
+  data_coding_overrides:
+    0: 'utf-8'
+    8: 'utf-8'
+
+submit_short_message_processor_config:
+  # allow for multipart SMS delivery
+  send_multipart_udh: True
+
+redis_manager:
+  host: 'redis'
+  key_prefix: "mama.ng.smpp"
+  db: 1
+
+middleware:
+  - logging_mw: vumi.middleware.logging.LoggingMiddleware
+
+logging_mw:
+  log_level: debug
