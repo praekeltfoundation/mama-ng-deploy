@@ -10,6 +10,8 @@ RUN gpg --keyserver pool.sks-keyservers.net --recv-key D76EDC7725E010CF
 RUN gpg -a --export D76EDC7725E010CF | apt-key add -
 
 # Install the packages
+# There are 102 packages for freeswitch-meta-vanilla, some of them quite big,
+# so we retry the install command for the case of one of the downloads failing.
 ADD retry_until_pass.sh ./
 RUN ./retry_until_pass.sh apt-get update
 RUN ./retry_until_pass.sh apt-get install -y freeswitch-meta-vanilla
