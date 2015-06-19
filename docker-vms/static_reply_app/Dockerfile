@@ -10,4 +10,4 @@ CMD twistd -n --pidfile=static_reply_app.pid \
     vumi_worker \
     --worker-class=vumi.demos.static_reply.StaticReplyApplication \
     --hostname=rabbitmq --vhost=/ --username=guest --password=guest \
-    --config=static_reply_app.yaml
+    --config=static_reply_app.yaml --set-option=transport_name:$TRANSPORT_NAME
