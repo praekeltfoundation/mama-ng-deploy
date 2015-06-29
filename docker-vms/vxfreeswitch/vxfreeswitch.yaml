@@ -15,11 +15,11 @@ freeswitch_endpoint: "tcp:host=127.0.0.1:port=8021"
 originate_parameters:
   call_url: "sofia/gateway/sip/{to_addr}"
   context: "public"
-  exten: "+23480677180000"
+  exten: "+2347023001039"
   cid_name: "mama-ng"
-  cid_num: "+23480677180000"
+  cid_num: "+2347023001039"
 
-to_addr: "+23480677180000"
+to_addr: "+2347023001039"
 
 tts_type: "freeswitch"
 tts_fs_engine: "flite"
