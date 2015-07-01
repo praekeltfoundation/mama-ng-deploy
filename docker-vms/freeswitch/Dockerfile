@@ -18,7 +18,7 @@ RUN ./retry_until_pass.sh apt-get install -y freeswitch-meta-vanilla
 
 # Copy configuration files
 RUN cp -a /usr/share/freeswitch/conf/vanilla/. /etc/freeswitch/
-ADD config /etc/freeswitch/
+COPY config/ /etc/freeswitch/
 ADD update_config_from_env.sh ./
 
 # Run freeswitch
