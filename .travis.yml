@@ -1,0 +1,12 @@
+install:
+  - curl -sLo - http://j.mp/install-travis-docker | sh -xe
+
+script:
+  - ./run 'docker build -t vxfreeswitch docker-vms/vxfreeswitch'
+  - ./run 'docker build -t vxtwinio docker-vms/vxtwinio'
+  - ./run 'docker build -t redis docker-vms/redis'
+  - ./run 'docker build -t rabbitmq docker-vms/rabbitmq'
+  - ./run 'docker build -t freeswitch docker-vms/freeswitch'
+  - ./run 'docker build -t smpp_transport docker-vms/smpp_transport'
+  - ./run 'docker build -t static_reply_app docker-vms/static_reply_app'
+  - ./run 'docker build -t http_api docker-vms/http_api'
