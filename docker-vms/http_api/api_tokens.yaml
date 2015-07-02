@@ -1,4 +1,5 @@
+# Example token. Replace for production
 -
-  account: "XXX"
-  conversation: "XXX"
-  tokens: ["XXX"]
+  account: "9e60a884-4b59-44db-a8a4-52c4bb02a874"
+  conversation: "2742b45a-ef7c-43f9-b782-5af8c4cc7e7a"
+  tokens: ["563735b0ea62"]
