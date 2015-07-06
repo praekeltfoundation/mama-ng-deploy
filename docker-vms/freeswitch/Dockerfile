@@ -23,4 +23,4 @@ ADD update_config_from_env.sh ./
 
 # Run freeswitch
 EXPOSE 8021
-CMD ./update_config_from_env.sh && /usr/bin/freeswitch -c
+CMD ./update_config_from_env.sh && stdbuf -i0 -o0 -e0 /usr/bin/freeswitch -c
