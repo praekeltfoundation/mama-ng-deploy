@@ -1,6 +1,6 @@
 <include>
     <extension name="sip.inbound">
-        <condition field="destination_number" expression="^({{number}})$">
+        <condition field="destination_number" expression="^(.*{{number}})$">
             <action application="log" data="DIALING Extension sip.inbound From [${sip_from_user}] To [${sip_to_user}]"/>
             <action application="socket" data="127.0.0.1:8050 async full"/>
         </condition>
