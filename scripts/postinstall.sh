@@ -11,3 +11,5 @@ docker build -t praekelt/mama-ng-freeswitch $INSTALLDIR/$REPO/docker-vms/freeswi
 docker build -t praekelt/mama-ng-smpp $INSTALLDIR/$REPO/docker-vms/smpp_transport
 docker build -t praekelt/mama-ng-static-reply $INSTALLDIR/$REPO/docker-vms/static_reply_app
 docker build -t praekelt/mama-ng-vumi-api $INSTALLDIR/$REPO/docker-vms/http_api
+
+docker-compose up -d
