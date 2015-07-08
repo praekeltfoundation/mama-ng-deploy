@@ -24,7 +24,16 @@ mamangcontrolcelery:
     - mamangdb:mamangdb
     - mamangredis:mamangredis
   env_file: mama_ng_control.env
-  command: /usr/local/bin/python manage.py celery worker --loglevel=debug
+  command: /usr/local/bin/python manage.py celery worker --loglevel=info
+
+mamangcontrolcelerybeat:
+  restart: always
+  build: ../mama-ng-control
+  links:
+    - mamangdb:mamangdb
+    - mamangredis:mamangredis
+  env_file: mama_ng_control.env
+  command: /usr/local/bin/python manage.py celery beat --loglevel=info
 
 mamangcontentstore:
   restart: always
