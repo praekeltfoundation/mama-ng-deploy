@@ -1,0 +1,10 @@
+# A static reply application
+
+worker_name: static_reply_app
+transport_name: static_reply_app
+
+middleware:
+  - logging_mw: vumi.middleware.logging.LoggingMiddleware
+
+logging_mw:
+  log_level: debug
