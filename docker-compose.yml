@@ -14,7 +14,7 @@ mamangcontrol:
   links:
     - mamangdb:mamangdb
     - mamangredis:mamangredis
-  env_file: mama_ng_control.env
+  env_file: env_files/mama_ng_control.env
   command: /usr/local/bin/gunicorn mama_ng_control.wsgi:application -w 2 -b :8000
 
 mamangcontrolcelery:
@@ -23,7 +23,7 @@ mamangcontrolcelery:
   links:
     - mamangdb:mamangdb
     - mamangredis:mamangredis
-  env_file: mama_ng_control.env
+  env_file: env_files/mama_ng_control.env
   command: /usr/local/bin/python manage.py celery worker --loglevel=info
 
 mamangcontrolcelerybeat:
@@ -32,7 +32,7 @@ mamangcontrolcelerybeat:
   links:
     - mamangdb:mamangdb
     - mamangredis:mamangredis
-  env_file: mama_ng_control.env
+  env_file: env_files/mama_ng_control.env
   command: /usr/local/bin/python manage.py celery beat --loglevel=info
 
 mamangcontentstore:
@@ -42,7 +42,7 @@ mamangcontentstore:
     - "8001"
   links:
     - mamangcontentstoredb:mamangcontentstoredb
-  env_file: mama_ng_contentstore.env
+  env_file: env_files/mama_ng_contentstore.env
   command: /usr/local/bin/gunicorn mama_ng_contentstore.wsgi:application -w 2 -b :8001
 
 mamangdb:
@@ -88,7 +88,7 @@ mamangscheduler:
     - "8090"
   links:
     - mamangschedulerdb:mamangschedulerdb
-  env_file: mama_ng_scheduler.env
+  env_file: env_files/mama_ng_scheduler.env
 
 mamangschedulerdb:
   restart: always
