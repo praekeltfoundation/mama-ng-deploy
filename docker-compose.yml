@@ -1,0 +1,106 @@
+nginxproxy:
+  restart: always
+  image: jwilder/nginx-proxy
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+  ports:
+    - "80:80"
+
+mamangcontrol:
+  restart: always
+  build: ../mama-ng-control
+  expose:
+    - "8000"
+  links:
+    - mamangdb:mamangdb
+    - mamangredis:mamangredis
+  env_file: env_files/mama_ng_control.env
+  command: /usr/local/bin/gunicorn mama_ng_control.wsgi:application -w 2 -b :8000
+
+mamangcontrolcelery:
+  restart: always
+  build: ../mama-ng-control
+  links:
+    - mamangdb:mamangdb
+    - mamangredis:mamangredis
+  env_file: env_files/mama_ng_control.env
+  command: /usr/local/bin/python manage.py celery worker --loglevel=info
+
+mamangcontrolcelerybeat:
+  restart: always
+  build: ../mama-ng-control
+  links:
+    - mamangdb:mamangdb
+    - mamangredis:mamangredis
+  env_file: env_files/mama_ng_control.env
+  command: /usr/local/bin/python manage.py celery beat --loglevel=info
+
+mamangcontentstore:
+  restart: always
+  build: ../mama-ng-contentstore
+  expose:
+    - "8001"
+  links:
+    - mamangcontentstoredb:mamangcontentstoredb
+  env_file: env_files/mama_ng_contentstore.env
+  command: /usr/local/bin/gunicorn mama_ng_contentstore.wsgi:application -w 2 -b :8001
+
+mamangdb:
+  restart: always
+  image: aidanlister/postgres-hstore:latest
+  volumes_from:
+    - mamangdbdata
+  ports:
+    - "5432:5432"
+
+mamangdbdata:
+  restart: no
+  image: aidanlister/postgres-hstore:latest
+  volumes:
+    - /var/lib/postgresql
+  command: true
+
+mamangcontentstoredb:
+  restart: always
+  image: aidanlister/postgres-hstore:latest
+  volumes_from:
+    - mamangcontentstoredbdata
+  ports:
+    - "5433:5432"
+
+mamangcontentstoredbdata:
+  restart: no
+  image: aidanlister/postgres-hstore:latest
+  volumes:
+    - /var/lib/postgresql
+  command: true
+
+mamangredis:
+  restart: always
+  image: redis:latest
+  ports:
+    - "6379:6379"
+
+mamangscheduler:
+  restart: always
+  build: ../mama-ng-scheduler
+  expose:
+    - "8090"
+  links:
+    - mamangschedulerdb:mamangschedulerdb
+  env_file: env_files/mama_ng_scheduler.env
+
+mamangschedulerdb:
+  restart: always
+  image: postgres:latest
+  volumes_from:
+    - mamangschedulerdbdata
+  ports:
+    - "5434:5432"
+
+mamangschedulerdbdata:
+  restart: no
+  image: postgres:latest
+  volumes:
+    - /var/lib/postgresql
+  command: true
