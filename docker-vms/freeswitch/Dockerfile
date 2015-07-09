@@ -19,8 +19,7 @@ RUN ./retry_until_pass.sh apt-get install -y freeswitch-meta-vanilla
 # Copy configuration files
 RUN cp -a /usr/share/freeswitch/conf/vanilla/. /etc/freeswitch/
 COPY config/ /etc/freeswitch/
-ADD update_config_from_env.sh ./
 
 # Run freeswitch
 EXPOSE 8021
-CMD ./update_config_from_env.sh && stdbuf -i0 -o0 -e0 /usr/bin/freeswitch -c
+CMD stdbuf -i0 -o0 -e0 /usr/bin/freeswitch -c
