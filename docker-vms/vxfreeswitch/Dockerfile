@@ -6,9 +6,7 @@ RUN pip install 'vxfreeswitch>=0.1.4'
 COPY . /app
 WORKDIR /app
 
-CMD [ \
-    "twistd", "-n", "--pidfile=vxfreeswitch.pid", \
-    "vumi_worker", "--worker-class=vxfreeswitch.VoiceServerTransport", \
-    "--hostname=rabbitmq", "--vhost=/", "--username=guest", "--password=guest", \
-    "--config=vxfreeswitch.yaml" \
-]
+CMD twistd -n --pidfile=vxfreeswitch.pid \
+    vumi_worker --worker-class=vxfreeswitch.VoiceServerTransport \
+    --hostname=rabbitmq --vhost=/ --username=guest --password=guest \
+    --config=$CONFIG_FILE
