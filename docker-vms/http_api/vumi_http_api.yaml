@@ -9,7 +9,7 @@ transport_name: "XXX"
 
 conversation_key: "2742b45a-ef7c-43f9-b782-5af8c4cc7e7a"
 web_path: "/api/vumi_http"
-web_port: 80
+web_port: 9003
 concurrency_limit: -1
 
 push_message_url: "XXX"
