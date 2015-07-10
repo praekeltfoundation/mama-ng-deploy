@@ -14,7 +14,7 @@ RUN gpg -a --export D76EDC7725E010CF | apt-key add -
 # so we retry the install command for the case of one of the downloads failing.
 ADD retry_until_pass.sh ./
 RUN ./retry_until_pass.sh apt-get update
-RUN ./retry_until_pass.sh apt-get install -y freeswitch-meta-vanilla
+RUN ./retry_until_pass.sh apt-get install -y freeswitch-meta-vanilla freeswitch-mod-flite
 
 # Copy configuration files
 RUN cp -a /usr/share/freeswitch/conf/vanilla/. /etc/freeswitch/
