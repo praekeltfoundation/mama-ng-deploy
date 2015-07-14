@@ -6,6 +6,8 @@ RUN pip install 'vumi-http-api>=0.1.0'
 COPY . /app
 WORKDIR /app
 
+EXPOSE 9003
+
 CMD twistd -n --pidfile=vumi-http-api.pid \
     vumi_worker \
     --worker-class=vumi_http_api.VumiApiWorker \
