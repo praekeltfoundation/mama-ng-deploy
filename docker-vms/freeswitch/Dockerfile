@@ -20,6 +20,14 @@ RUN ./retry_until_pass.sh apt-get install -y freeswitch-meta-vanilla freeswitch-
 RUN cp -a /usr/share/freeswitch/conf/vanilla/. /etc/freeswitch/
 COPY config/ /etc/freeswitch/
 
+# Expose correct ports
+# From https://wiki.freeswitch.org/wiki/Firewall
+EXPOSE 1719/udp 1720/tcp 3478/udp 3479/udp
+EXPOSE 5002/tcp 5003/tcp
+EXPOSE 5060/tcp 5060/udp 5070/tcp 5070/udp 5080/tcp 5080/udp
+EXPOSE 8021/tcp
+EXPOSE 16384-32768/udp
+EXPOSE 5066/tcp 7443/tcp
+
 # Run freeswitch
-EXPOSE 8021
 CMD stdbuf -i0 -o0 -e0 /usr/bin/freeswitch -c
