@@ -7,7 +7,7 @@
 worker_name: http_api_application
 transport_name: "XXX"
 
-conversation_key: "2742b45a-ef7c-43f9-b782-5af8c4cc7e7a"
+conversation_key: "XXX"
 web_path: "/api/vumi_http"
 web_port: 9003
 concurrency_limit: -1

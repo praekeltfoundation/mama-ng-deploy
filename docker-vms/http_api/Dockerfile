@@ -14,4 +14,5 @@ CMD twistd -n --pidfile=vumi-http-api.pid \
     --hostname=rabbitmq --vhost=/ --username=guest --password=guest \
     --config=vumi_http_api.yaml --set-option=transport_name:$TRANSPORT \
     --set-option=push_message_url:$PUSH_MSG_URL \
-    --set-option=push_event_url:$PUSH_EVENT_URL
+    --set-option=push_event_url:$PUSH_EVENT_URL \
+    --set-option=conversation_key:$CONVERSATION
