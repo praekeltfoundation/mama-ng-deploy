@@ -1,7 +1,7 @@
 FROM python:2.7.9
 MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
-RUN pip install 'vumi-http-api>=0.1.0'
+RUN pip install 'vumi-http-api>=0.1.1'
 
 COPY . /app
 WORKDIR /app
