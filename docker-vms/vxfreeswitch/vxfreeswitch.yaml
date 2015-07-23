@@ -12,6 +12,7 @@ transport_name: vxfreeswitch_transport
 twisted_endpoint: "tcp:port=8050"
 
 freeswitch_endpoint: "tcp:host=127.0.0.1:port=8021"
+freeswitch_auth: "ClueCon"
 originate_parameters:
   call_url: "sofia/gateway/sip/{to_addr}"
   context: "public"
