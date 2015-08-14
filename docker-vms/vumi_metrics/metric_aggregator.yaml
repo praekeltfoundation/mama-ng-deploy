@@ -1,0 +1,1 @@
+bucket_size: 10  # needs to match bucket_size in metric_time_buckets.yaml
