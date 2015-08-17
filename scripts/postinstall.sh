@@ -12,3 +12,4 @@ docker build -t praekelt/mama-ng-static-reply $INSTALLDIR/$REPO/docker-vms/stati
 docker build -t praekelt/mama-ng-vumi-api $INSTALLDIR/$REPO/docker-vms/http_api
 docker build -t praekelt/mama-ng-jssandbox $INSTALLDIR/$REPO/docker-vms/jssandbox
 docker build -t praekelt/mama-ng-graphite $INSTALLDIR/$REPO/docker-vms/graphite
+docker build -t praekelt/grafana $INSTALLDIR/$REPO/docker-vms/grafana
