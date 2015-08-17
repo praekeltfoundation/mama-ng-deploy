@@ -4,7 +4,6 @@
 set -e
 
 docker build -t praekelt/mama-ng-vxfreeswitch $INSTALLDIR/$REPO/docker-vms/vxfreeswitch
-docker build -t praekelt/mama-ng-vxtwinio $INSTALLDIR/$REPO/docker-vms/vxtwinio
 docker build -t praekelt/mama-ng-redis $INSTALLDIR/$REPO/docker-vms/redis
 docker build -t praekelt/mama-ng-rabbitmq $INSTALLDIR/$REPO/docker-vms/rabbitmq
 docker build -t praekelt/mama-ng-freeswitch $INSTALLDIR/$REPO/docker-vms/freeswitch
@@ -13,4 +12,5 @@ docker build -t praekelt/mama-ng-static-reply $INSTALLDIR/$REPO/docker-vms/stati
 docker build -t praekelt/mama-ng-vumi-api $INSTALLDIR/$REPO/docker-vms/http_api
 docker build -t praekelt/mama-ng-jssandbox $INSTALLDIR/$REPO/docker-vms/jssandbox
 docker build -t praekelt/mama-ng-graphite $INSTALLDIR/$REPO/docker-vms/graphite
+docker build -t praekelt/grafana $INSTALLDIR/$REPO/docker-vms/grafana
 docker build -t praekelt/mama-ng-vumi-metrics $INSTALLDIR/$REPO/docker-vms/vumi_metrics
