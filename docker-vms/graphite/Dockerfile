@@ -15,6 +15,10 @@ COPY config/graphite/ /opt/graphite/conf/
 COPY config/graphite-web/ /opt/graphite/webapp/graphite/
 RUN cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/webapp/wsgi.py
 
+# Graphite database and whisper data volumes
+VOLUME /opt/graphite/webapp/graphite.db
+VOLUME /opt/graphite/storage
+
 # Build initial database
 WORKDIR /opt/graphite/conf
 RUN python /opt/graphite/webapp/graphite/manage.py syncdb --noinput
