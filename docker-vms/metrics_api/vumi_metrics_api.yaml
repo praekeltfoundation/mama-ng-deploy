@@ -1,0 +1,15 @@
+# Config that needs to be set:
+# TODO: figure out how to set these
+# auth_bouncer_url
+# url_path_prefix
+# backend.graphite_url
+# backend.user_name
+# backend.password
+
+auth_bouncer_url: 'http://.../'
+url_path_prefix: 'XXX'
+
+backend:
+    graphite_url: 'http://.../'
+    username: 'XXX'
+    password: 'XXX'

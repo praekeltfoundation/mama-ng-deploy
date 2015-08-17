@@ -14,3 +14,4 @@ docker build -t praekelt/mama-ng-jssandbox $INSTALLDIR/$REPO/docker-vms/jssandbo
 docker build -t praekelt/mama-ng-graphite $INSTALLDIR/$REPO/docker-vms/graphite
 docker build -t praekelt/grafana $INSTALLDIR/$REPO/docker-vms/grafana
 docker build -t praekelt/mama-ng-vumi-metrics $INSTALLDIR/$REPO/docker-vms/vumi_metrics
+docker build -t praekelt/mama-ng-metrics-api $INSTALLDIR/$REPO/docker-vms/metrics_api
