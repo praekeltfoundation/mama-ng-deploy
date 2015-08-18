@@ -38,6 +38,8 @@ mamangcontrolcelerybeat:
 mamangcontentstore:
   restart: always
   build: ../mama-ng-contentstore
+  volumes:
+    - /var/praekelt/media/mamangcontentstore/media:/usr/src/app/media
   expose:
     - "8001"
   links:
