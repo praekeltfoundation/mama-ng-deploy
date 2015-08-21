@@ -1,6 +1,6 @@
 # A jssandbox image that takes in javascript from a file
 #
-# Note: 
+# Note:
 #   The TRANSPORT_NAME environment variable must be set
 #   The application must be linked in as `/app/app.js`
 #   The application config must be linked in as `/app/config.json`
@@ -37,6 +37,8 @@ sandbox:
     keys_per_user: 550000
   outbound:
     cls: vxsandbox.resources.outbound.OutboundResource
+    allowed_helper_metadata:
+      - voice
 
 # middleware configuration
 
