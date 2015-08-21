@@ -1,15 +1,13 @@
-# Config that needs to be set:
-# TODO: figure out how to set these
-# auth_bouncer_url
-# url_path_prefix
-# backend.graphite_url
-# backend.user_name
-# backend.password
+# Notes:
+#
+# * X-Owner-ID header must be set by something (e.g. nginx).
+# * It needs to be linked to a graphite container with --link graphite:graphite
+# * The graphite container needs a graphite user with username api and
+#   password api.
 
-auth_bouncer_url: 'http://.../'
-url_path_prefix: 'XXX'
+url_path_prefix: '/api/metrics'
 
 backend:
-    graphite_url: 'http://.../'
-    username: 'XXX'
-    password: 'XXX'
+    graphite_url: 'http://graphite/'
+    username: 'api'
+    password: 'api'
