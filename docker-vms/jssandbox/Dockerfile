@@ -3,7 +3,7 @@ MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
 RUN apt-get update && apt-get install -y nodejs npm
 
-RUN pip install 'vxsandbox>=0.5.3'
+RUN pip install 'vxsandbox>=0.5.4'
 
 RUN npm install moment url querystring crypto lodash q jed vumigo_v01 vumigo_v02 go-jsbox-location go-jsbox-metrics-helper go-jsbox-ona go-jsbox-xform
 
