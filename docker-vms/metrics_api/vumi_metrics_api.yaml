@@ -1,0 +1,13 @@
+# Notes:
+#
+# * X-Owner-ID header must be set by something (e.g. nginx).
+# * It needs to be linked to a graphite container with --link graphite:graphite
+# * The graphite container needs a graphite user with username api and
+#   password api.
+
+url_path_prefix: '/api/metrics'
+
+backend:
+    graphite_url: 'http://graphite/'
+    username: 'api'
+    password: 'api'
