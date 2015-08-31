@@ -60,7 +60,7 @@ mamangdbdata:
   image: aidanlister/postgres-hstore:latest
   volumes:
     - /var/lib/postgresql
-  command: true
+  command: "true"
 
 mamangcontentstoredb:
   restart: always
@@ -75,7 +75,7 @@ mamangcontentstoredbdata:
   image: aidanlister/postgres-hstore:latest
   volumes:
     - /var/lib/postgresql
-  command: true
+  command: "true"
 
 mamangredis:
   restart: always
@@ -105,4 +105,4 @@ mamangschedulerdbdata:
   image: postgres:latest
   volumes:
     - /var/lib/postgresql
-  command: true
+  command: "true"
