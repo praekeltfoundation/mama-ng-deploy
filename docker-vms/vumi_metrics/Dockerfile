@@ -10,5 +10,6 @@ COPY config/supervisor/ /etc/supervisor/conf.d/
 
 COPY . /app
 WORKDIR /app
+RUN mkdir -p /app/logs
 
 CMD /usr/local/bin/supervisord -c /etc/supervisor/conf.d/vumi_metrics.conf
