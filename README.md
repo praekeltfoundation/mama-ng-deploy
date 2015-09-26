@@ -94,6 +94,22 @@ environment variables, are:
 Each application also has its own database container and volume and
 `mama_ng_control` also has celery and redis containers for task management.
 
+When creating a completely new environment, some setup steps are needed to
+ensure that database are populated with the necessary tables::
+
+  $ source /var/praekelt/python/bin/activate
+  $ cd /var/praekelt/mama-ng-deploy
+  $ sudo docker-compose build
+  $ sudo docker-compose up -d mamangscheduler
+  $ sudo docker-compose run mamangcontentstore /usr/local/bin/python manage.py migrate
+  $ sudo docker-compose run mamangcontentstore /usr/local/bin/python manage.py createsuperuser
+  $ sudo docker-compose run mamangcontentstore /usr/local/bin/python manage.py collectstatic
+  $ sudo docker-compose run mamangcontrol /usr/local/bin/python manage.py migrate
+  $ sudo docker-compose run mamangcontrol /usr/local/bin/python manage.py createsuperuser
+  # Connect to the scheduler postgres database and create an admin user with password admin.
+  $ psql -h 172.17.42.1 -p 5434 -U postgres
+  postgres=# insert into service_users (id, version, date_created, password_hash, username, type) values (1, 0, NOW(), 'YWRtaW4=', 'admin', 'SUPER');
+
 
 Containers on infr
 ------------------
