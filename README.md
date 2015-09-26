@@ -245,4 +245,9 @@ Gotchas
 
 Unexpected rough edges:
 
-* None documented yet.
+* We still need to figure out how to properly configure the Grafana base URL.
+
+* We still need to figure out how to configure Graphite as a Grafan source.
+
+* We still need to figure out how to setup an example Grafana dashboard that
+  a least shows that metrics are working.
