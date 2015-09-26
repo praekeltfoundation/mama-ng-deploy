@@ -30,10 +30,78 @@ is different for the two machines:
 Containers on app
 -----------------
 
-XXX
+The app containers are defined in [docker-compose.yml](docker-compose.yml).
+Additional configuration is supplied via environment files that are deployed
+from the puppet `mama_nigeria_app` module.
+
+Each environment file is defined by a template of default values, plus values
+that differ between deployments and that are added for each machine.
+
+There three separate environment files, along with their configurable
+environment variables, are:
+
+* `mama_ng_contentstore.env` - environment variables for the content store
+  Django application. This application holds voice and text messages for
+  sending to people who register for stage-based messaging.
+
+  * `VIRTUAL_HOST` - content store host name, e.g.
+    `mama-ng-contentstore.example.com`.
+
+  * `SECRET_KEY` - Django secret key.
+
+  * `MAMA_NG_CONTENTSTORE_SENTRY_DSN` - Sentry DSN.
+
+* `mama_ng_control.env` - environment variables for the control interface
+  Django application.
+
+  * `VIRTUAL_HOST` - control interface host name, e.g.
+    `mama-ng-control.example.com`.
+
+  * `SECRET_KEY` - Django secret key.
+
+  * `MAMA_NG_CONTROL_SENTRY_DSN` - Sentry DSN.
+
+  * `MAMA_NG_CONTROL_URL` - URL of the content store API, e.g.
+    `http://mama-ng-control.example.com/api/v1`.
+
+  * `MAMA_NG_CONTROL_VUMI_API_URL` - URL of the Vumi HTTP API for sending
+    messages, e.g. `http://mama-ng-infr.example.com/api/vumi_http`.
+
+  * `MAMA_NG_CONTROL_VUMI_ACCOUNT_KEY` - account key for the above API.
+
+  * `MAMA_NG_CONTROL_VUMI_CONVERSATION_KEY` - conversation key for the above
+    API.
+
+  * `MAMA_NG_CONTROL_VUMI_ACCOUNT_TOKEN` - authentication token for the above
+    API.
+
+  * `MAMA_NG_CONTROL_CONTENTSTORE_API_URL` - URL of the content store API, e.g.
+    `http://mama-ng-contentstore.example.com/contentstore`.
+
+  * `MAMA_NG_CONTROL_CONTENTSTORE_AUTH_TOKEN` - authentication token for the
+    above API.
+
+  * `MAMA_NG_CONTROL_SCHEDULER_URL` - URL of the scheduler API, e.g.
+    `http://mama-ng-scheduler.example.com/mama-ng-scheduler/rest`.
+
+* `mama_ng_scheduler.env` - environment variables for the **Grails** scheduler
+  application.
+
+  * `VIRTUAL_HOST` - scheduler host name, e.g. `mama-ng-scheduler.example.com`.
+
+  * `SENTRY_URL` - Sentry DSN.
+
+Each application also has its own database container and volume and
+`mama_ng_control` also has celery and redis containers for task management.
 
 
 Containers on infr
 ------------------
+
+XXX
+
+
+Gotchas
+-------
 
 XXX
