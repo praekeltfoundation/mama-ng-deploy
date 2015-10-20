@@ -1,7 +1,7 @@
 FROM python:2.7.9
 MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
-RUN pip install 'vxfreeswitch>=0.1.8'
+RUN pip install 'vxfreeswitch>=0.1.9'
 
 COPY . /app
 WORKDIR /app
