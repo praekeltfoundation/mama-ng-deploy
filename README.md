@@ -253,3 +253,7 @@ Unexpected rough edges:
 
 * We still need to figure out how to setup an example Grafana dashboard that
   a least shows that metrics are working.
+
+* Debugging FreeSwitch in Docker can be hard. See
+  [FreeSwitch in Docker](freeswitch-docker-readme.md) for some tricks and
+  advice.
