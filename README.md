@@ -95,8 +95,9 @@ Each application also has its own database container and volume and
 `mama_ng_control` also has celery and redis containers for task management.
 
 When creating a completely new environment, some setup steps are needed to
-ensure that database are populated with the necessary tables::
+ensure that database are populated with the necessary tables:
 
+```
   $ source /var/praekelt/python/bin/activate
   $ cd /var/praekelt/mama-ng-deploy
   $ sudo docker-compose build
@@ -109,6 +110,7 @@ ensure that database are populated with the necessary tables::
   # Connect to the scheduler postgres database and create an admin user with password admin.
   $ psql -h 172.17.42.1 -p 5434 -U postgres
   postgres=# insert into service_users (id, version, date_created, password_hash, username, type) values (1, 0, NOW(), 'YWRtaW4=', 'admin', 'SUPER');
+```
 
 
 Containers on infr
