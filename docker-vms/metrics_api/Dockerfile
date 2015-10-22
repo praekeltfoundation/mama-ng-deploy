@@ -1,7 +1,7 @@
 FROM python:2.7.9
 MAINTAINER Praekelt Foundation <dev@praekeltfoundation.org>
 
-RUN pip install 'go-metrics-api>=0.1.4'
+RUN pip install 'go-metrics-api>=0.1.8'
 
 COPY . /app
 WORKDIR /app
