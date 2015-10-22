@@ -11,3 +11,9 @@ backend:
     graphite_url: 'http://graphite/'
     username: 'api'
     password: 'api'
+
+    amqp_hostname: 'rabbitmq'
+    amqp_port: 5672
+    amqp_username: 'guest'
+    amqp_password: 'guest'
+    amqp_vhost: '/'
