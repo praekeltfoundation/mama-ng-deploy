@@ -1,0 +1,160 @@
+{
+  "id": "/",
+  "apps": [
+    {
+      "id": "mamangcontrol",
+      "cmd": "/usr/local/bin/gunicorn mama_ng_control.wsgi:application -w 2 -b :8000",
+      "instances": 1,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "mama-ng-control",
+          "network": "BRIDGE",
+          "portMappings": [
+            {
+              "containerPort": 8000
+            }
+          ]
+        }
+      },
+      "env": {
+        "VIRTUAL_HOST": "mama-ng-control.local",
+        "SECRET_KEY": "5(15ds+i2+%ik6z&!yer+ga9m=e%jcqiz_5wszg)r-z!2--b2d",
+        "MAMA_NG_CONTROL_DB_NAME": "postgres",
+        "MAMA_NG_CONTROL_DB_USER": "postgres",
+        "MAMA_NG_CONTROL_DB_PASS": "postgres",
+        "MAMA_NG_CONTROL_DB_SERVICE": "mamangdb",
+        "MAMA_NG_CONTROL_DB_PORT": "5432",
+        "MAMA_NG_CONTROL_REDIS_SERVICE": "mamangredis",
+        "MAMA_NG_CONTROL_REDIS_PORT": "6379",
+        "MAMA_NG_CONTROL_URL": "http://mamangcontrol/api/v1",
+        "MAMA_NG_CONTROL_VUMI_API_URL": "memangvumi",
+        "MAMA_NG_CONTROL_VUMI_ACCOUNT_KEY": "replace-me",
+        "MAMA_NG_CONTROL_VUMI_CONVERSATION_KEY": "replace-me",
+        "MAMA_NG_CONTROL_VUMI_ACCOUNT_TOKEN": "replace-me",
+        "MAMA_NG_CONTROL_MAX_RETRIES": "3",
+        "MAMA_NG_CONTROL_MAX_FAILURES": "5",
+        "MAMA_NG_CONTROL_CONTENTSTORE_AUTH_TOKEN": "replace-me",
+        "MAMA_NG_CONTROL_CONTENTSTORE_API_URL": "mamangcontentstore",
+        "MAMA_NG_CONTROL_SCHEDULER_URL": "http://mamangscheduler/mama-ng-scheduler/rest/",
+        "MAMA_NG_CONTROL_SCHEDULER_USERNAME": "sc-username",
+        "MAMA_NG_CONTROL_SCHEDULER_PASSWORD": "sc-password"
+      }
+    },
+    {
+      "id": "mamangcontrolcelery",
+      "cmd": "/usr/local/bin/python manage.py celery worker --loglevel=info",
+      "instances": 1,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "mama-ng-control"
+        }
+      },
+      "env": {
+        "VIRTUAL_HOST": "mama-ng-control.local",
+        "SECRET_KEY": "5(15ds+i2+%ik6z&!yer+ga9m=e%jcqiz_5wszg)r-z!2--b2d",
+        "MAMA_NG_CONTROL_DB_NAME": "postgres",
+        "MAMA_NG_CONTROL_DB_USER": "postgres",
+        "MAMA_NG_CONTROL_DB_PASS": "postgres",
+        "MAMA_NG_CONTROL_DB_SERVICE": "mamangdb",
+        "MAMA_NG_CONTROL_DB_PORT": "5432",
+        "MAMA_NG_CONTROL_REDIS_SERVICE": "mamangredis",
+        "MAMA_NG_CONTROL_REDIS_PORT": "6379",
+        "MAMA_NG_CONTROL_URL": "http://mamangcontrol/api/v1",
+        "MAMA_NG_CONTROL_VUMI_API_URL": "memangvumi",
+        "MAMA_NG_CONTROL_VUMI_ACCOUNT_KEY": "replace-me",
+        "MAMA_NG_CONTROL_VUMI_CONVERSATION_KEY": "replace-me",
+        "MAMA_NG_CONTROL_VUMI_ACCOUNT_TOKEN": "replace-me",
+        "MAMA_NG_CONTROL_MAX_RETRIES": "3",
+        "MAMA_NG_CONTROL_MAX_FAILURES": "5",
+        "MAMA_NG_CONTROL_CONTENTSTORE_AUTH_TOKEN": "replace-me",
+        "MAMA_NG_CONTROL_CONTENTSTORE_API_URL": "mamangcontentstore",
+        "MAMA_NG_CONTROL_SCHEDULER_URL": "http://mamangscheduler/mama-ng-scheduler/rest/",
+        "MAMA_NG_CONTROL_SCHEDULER_USERNAME": "sc-username",
+        "MAMA_NG_CONTROL_SCHEDULER_PASSWORD": "sc-password"
+      }
+    },
+    {
+      "id": "mamangcontrolcelerybeat",
+      "cmd": "/usr/local/bin/python manage.py celery beat --loglevel=info",
+      "instances": 1,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "mama-ng-control"
+        }
+      },
+      "env": {
+        "VIRTUAL_HOST": "mama-ng-control.local",
+        "SECRET_KEY": "5(15ds+i2+%ik6z&!yer+ga9m=e%jcqiz_5wszg)r-z!2--b2d",
+        "MAMA_NG_CONTROL_DB_NAME": "postgres",
+        "MAMA_NG_CONTROL_DB_USER": "postgres",
+        "MAMA_NG_CONTROL_DB_PASS": "postgres",
+        "MAMA_NG_CONTROL_DB_SERVICE": "mamangdb",
+        "MAMA_NG_CONTROL_DB_PORT": "5432",
+        "MAMA_NG_CONTROL_REDIS_SERVICE": "mamangredis",
+        "MAMA_NG_CONTROL_REDIS_PORT": "6379",
+        "MAMA_NG_CONTROL_URL": "http://mamangcontrol/api/v1",
+        "MAMA_NG_CONTROL_VUMI_API_URL": "memangvumi",
+        "MAMA_NG_CONTROL_VUMI_ACCOUNT_KEY": "replace-me",
+        "MAMA_NG_CONTROL_VUMI_CONVERSATION_KEY": "replace-me",
+        "MAMA_NG_CONTROL_VUMI_ACCOUNT_TOKEN": "replace-me",
+        "MAMA_NG_CONTROL_MAX_RETRIES": "3",
+        "MAMA_NG_CONTROL_MAX_FAILURES": "5",
+        "MAMA_NG_CONTROL_CONTENTSTORE_AUTH_TOKEN": "replace-me",
+        "MAMA_NG_CONTROL_CONTENTSTORE_API_URL": "mamangcontentstore",
+        "MAMA_NG_CONTROL_SCHEDULER_URL": "http://mamangscheduler/mama-ng-scheduler/rest/",
+        "MAMA_NG_CONTROL_SCHEDULER_USERNAME": "sc-username",
+        "MAMA_NG_CONTROL_SCHEDULER_PASSWORD": "sc-password"
+      }
+    },
+    {
+      "id": "mamangcontentstore",
+      "cmd": "/usr/local/bin/gunicorn mama_ng_contentstore.wsgi:application -w 2 -b :8001",
+      "instances": 1,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "mama-ng-contentstore"
+        },
+        "network": "BRIDGE",
+        "portMappings": [
+          {
+            "containerPort": 8001
+          }
+        ]
+      },
+      "env": {
+        "VIRTUAL_HOST": "mama-ng-contentstore.local",
+        "SECRET_KEY": "6(16ds+i2+%ik6z&!yer+ga9m=e%jcqiz_5wszg)r-z!2--b1d",
+        "MAMA_NG_CONTENTSTORE_DB_NAME": "postgres",
+        "MAMA_NG_CONTENTSTORE_DB_USER": "postgres",
+        "MAMA_NG_CONTENTSTORE_DB_PASS": "postgres",
+        "MAMA_NG_CONTENTSTORE_DB_SERVICE": "mamangcontentstoredb",
+        "MAMA_NG_CONTENTSTORE_DB_PORT": "5432",
+        "DEBUG": "True"
+      }
+    },
+    {
+      "id": "mamangscheduler",
+      "instances": 1,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "mama-ng-scheduler"
+        },
+        "network": "BRIDGE",
+        "portMappings": [
+          {
+            "containerPort": 8090
+          }
+        ]
+      },
+      "env": {
+        "VIRTUAL_HOST": "mama-ng-scheduler.local",
+        "DATABASE_URL": "postgresql://postgres:postgres@mamangschedulerdb:5432/postgres"
+      }
+    }
+  ]
+}
