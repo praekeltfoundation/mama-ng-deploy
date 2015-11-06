@@ -12,6 +12,6 @@ WORKDIR /app
 
 CMD twistd -n --pidfile=jssandbox.pid \
     vumi_worker --worker-class=vxsandbox.worker.StandaloneJsFileSandbox \
-    --hostname=rabbitmq --vhost=/ --username=guest --password=guest \
+    --hostname=rabbitmq.service.consul --vhost=/ --username=guest --password=guest \
     --config=jssandbox.yaml --set-option=transport_name:$TRANSPORT_NAME \
     --set-option=executable:`which nodejs`

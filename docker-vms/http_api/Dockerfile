@@ -11,7 +11,7 @@ EXPOSE 9003
 CMD twistd -n --pidfile=vumi-http-api.pid \
     vumi_worker \
     --worker-class=vumi_http_api.VumiApiWorker \
-    --hostname=rabbitmq --vhost=/ --username=guest --password=guest \
+    --hostname=rabbitmq.service.consul --vhost=/ --username=guest --password=guest \
     --config=vumi_http_api.yaml --set-option=transport_name:$TRANSPORT \
     --set-option=push_message_url:$PUSH_MSG_URL \
     --set-option=push_event_url:$PUSH_EVENT_URL \

@@ -12,7 +12,7 @@ backend:
     username: 'api'
     password: 'api'
 
-    amqp_hostname: 'rabbitmq'
+    amqp_hostname: 'rabbitmq.service.consul'
     amqp_port: 5672
     amqp_username: 'guest'
     amqp_password: 'guest'
