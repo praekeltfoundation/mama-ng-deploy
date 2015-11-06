@@ -5,6 +5,8 @@
       "id": "mamangcontrol",
       "cmd": "/usr/local/bin/gunicorn mama_ng_control.wsgi:application -w 2 -b :8000",
       "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
       "container": {
         "type": "DOCKER",
         "docker": {
@@ -45,6 +47,8 @@
       "id": "mamangcontrolcelery",
       "cmd": "/usr/local/bin/python manage.py celery worker --loglevel=info",
       "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
       "container": {
         "type": "DOCKER",
         "docker": {
@@ -79,6 +83,8 @@
       "id": "mamangcontrolcelerybeat",
       "cmd": "/usr/local/bin/python manage.py celery beat --loglevel=info",
       "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
       "container": {
         "type": "DOCKER",
         "docker": {
@@ -113,6 +119,8 @@
       "id": "mamangcontentstore",
       "cmd": "/usr/local/bin/gunicorn mama_ng_contentstore.wsgi:application -w 2 -b :8001",
       "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
       "container": {
         "type": "DOCKER",
         "docker": {
@@ -139,6 +147,8 @@
     {
       "id": "mamangscheduler",
       "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
       "container": {
         "type": "DOCKER",
         "docker": {
