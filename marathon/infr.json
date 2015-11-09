@@ -38,7 +38,7 @@
       "id": "vumi-api",
       "instances": 1,
       "cpus": 0.1,
-      "mem": 192,
+      "mem": 128,
       "container": {
         "type": "DOCKER",
         "docker": {
