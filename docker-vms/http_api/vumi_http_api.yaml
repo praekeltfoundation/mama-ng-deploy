@@ -17,7 +17,7 @@ push_event_url: "XXX"
 api_tokens: !include api_tokens.yaml
 
 redis_manager:
-  host: redis
+  host: redis.service.consul
   key_prefix: "mama.ng.vumi_http"
   db: 1
 
