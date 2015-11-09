@@ -47,7 +47,11 @@
           "key": "add-host",
           "value": "servicehost:172.17.0.1"
         }
-      ]
+      ],
+      "labels": {
+        "location": "/mamangcontrol/api/v1",
+        "internal": "true"
+      }
     },
     {
       "id": "mamangcontrolcelery",
@@ -166,7 +170,11 @@
           "key": "add-host",
           "value": "servicehost:172.17.0.1"
         }
-      ]
+      ],
+      "labels": {
+        "location": "/mamangcontentstore",
+        "internal": "true"
+      }
     },
     {
       "id": "mamangscheduler",
@@ -194,7 +202,11 @@
           "key": "add-host",
           "value": "servicehost:172.17.0.1"
         }
-      ]
+      ],
+      "labels": {
+        "location": "/mamangscheduler/mama-ng-scheduler/rest/",
+        "internal": "true"
+      }
     }
   ]
 }

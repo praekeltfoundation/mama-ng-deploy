@@ -50,6 +50,10 @@
             }
           ]
         }
+      },
+      "labels": {
+        "location": "/mamangvumi",
+        "internal": "true"
       }
     },
     {
