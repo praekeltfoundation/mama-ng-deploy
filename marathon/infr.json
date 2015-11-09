@@ -64,14 +64,14 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "go-metrics-api"
-        },
-        "network": "BRIDGE",
-        "portMappings": [
-          {
-            "containerPort": 8000
-          }
-        ]
+          "image": "go-metrics-api",
+          "network": "BRIDGE",
+          "portMappings": [
+            {
+              "containerPort": 8000
+            }
+          ]
+        }
       }
     },
     {
