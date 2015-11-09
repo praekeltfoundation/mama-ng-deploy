@@ -1,0 +1,86 @@
+{
+  "id": "/infr",
+  "apps": [
+    {
+      "id": "metrics-grafana",
+      "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "grafana"
+        }
+      }
+    },
+    {
+      "id": "metrics-graphite",
+      "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "graphite",
+          "network": "BRIDGE",
+          "portMappings": [
+            {
+              "containerPort": 8080
+            },
+            {
+              "containerPort": 2003
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "vumi-api",
+      "instances": 1,
+      "cpus": 0.1,
+      "mem": 192,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "vumi-http-api",
+          "network": "BRIDGE",
+          "portMappings": [
+            {
+              "containerPort": 9003
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "metrics-api",
+      "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "go-metrics-api"
+        },
+        "network": "BRIDGE",
+        "portMappings": [
+          {
+            "containerPort": 8000
+          }
+        ]
+      }
+    },
+    {
+      "id": "metrics-vumi-workers",
+      "instances": 1,
+      "cpus": 0.1,
+      "mem": 128,
+      "container": {
+        "type": "DOCKER",
+        "docker": {
+          "image": "vumi-metrics"
+        }
+      }
+    }
+  ]
+}
