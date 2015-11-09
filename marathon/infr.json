@@ -54,7 +54,16 @@
       "labels": {
         "location": "/mamangvumi",
         "internal": "true"
-      }
+      },
+      "healthChecks": [
+        {
+          "protocol": "HTTP",
+          "path": "/health/",
+          "gracePeriodSeconds": 5,
+          "intervalSeconds": 10,
+          "timeoutSeconds": 5
+        }
+      ]
     },
     {
       "id": "metrics-api",
