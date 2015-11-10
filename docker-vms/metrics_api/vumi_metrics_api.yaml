@@ -5,10 +5,10 @@
 # * The graphite container needs a graphite user with username api and
 #   password api.
 
-url_path_prefix: '/api/metrics'
+url_path_prefix: '/vumi/api/metrics'
 
 backend:
-    graphite_url: 'http://graphite/'
+    graphite_url: 'http://servicehost/graphite/'
     username: 'api'
     password: 'api'
 

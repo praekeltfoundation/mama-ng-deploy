@@ -32,6 +32,10 @@
             }
           ]
         }
+      },
+      "labels": {
+        "location": "/graphite/",
+        "internal": "true"
       }
     },
     {
@@ -81,7 +85,20 @@
             }
           ]
         }
-      }
+      },
+      "labels": {
+        "location": "/vumi/api/metrics/",
+        "internal": "true"
+      },
+      "healthChecks": [
+        {
+          "protocol": "HTTP",
+          "path": "/health/",
+          "gracePeriodSeconds": 5,
+          "intervalSeconds": 10,
+          "timeoutSeconds": 5
+        }
+      ]
     },
     {
       "id": "metrics-vumi-workers",

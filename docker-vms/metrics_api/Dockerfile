@@ -8,9 +8,7 @@ WORKDIR /app
 
 EXPOSE 8000
 
-CMD twistd -n --pidfile=vumi-metrics-api.pid \
-    cyclone \
-    --listen=localhost \
+CMD twistd -n cyclone \
     --port=8000 \
     --appopts=vumi_metrics_api.yaml \
     --app=go_metrics.server.MetricsApi
