@@ -2,18 +2,6 @@
   "id": "/infr",
   "apps": [
     {
-      "id": "metrics-grafana",
-      "instances": 1,
-      "cpus": 0.1,
-      "mem": 128,
-      "container": {
-        "type": "DOCKER",
-        "docker": {
-          "image": "grafana"
-        }
-      }
-    },
-    {
       "id": "vumi-api",
       "instances": 1,
       "cpus": 0.1,
