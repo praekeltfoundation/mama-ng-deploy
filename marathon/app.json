@@ -50,7 +50,8 @@
       ],
       "labels": {
         "location": "/mamangcontrol/api/v1",
-        "internal": "true"
+        "internal": "true",
+        "domain": "mamangcontrol.127.0.0.1.xip.io"
       }
     },
     {
@@ -173,7 +174,8 @@
       ],
       "labels": {
         "location": "/mamangcontentstore",
-        "internal": "true"
+        "internal": "true",
+        "domain": "mamangcontentstore.127.0.0.1.xip.io"
       }
     },
     {
@@ -205,7 +207,8 @@
       ],
       "labels": {
         "location": "/mamangscheduler/mama-ng-scheduler/rest/",
-        "internal": "true"
+        "internal": "true",
+        "domain": "mamangscheduler.127.0.0.1.xip.io"
       }
     }
   ]
