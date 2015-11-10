@@ -14,31 +14,6 @@
       }
     },
     {
-      "id": "metrics-graphite",
-      "instances": 1,
-      "cpus": 0.1,
-      "mem": 128,
-      "container": {
-        "type": "DOCKER",
-        "docker": {
-          "image": "graphite",
-          "network": "BRIDGE",
-          "portMappings": [
-            {
-              "containerPort": 8080
-            },
-            {
-              "containerPort": 2003
-            }
-          ]
-        }
-      },
-      "labels": {
-        "location": "/graphite/",
-        "internal": "true"
-      }
-    },
-    {
       "id": "vumi-api",
       "instances": 1,
       "cpus": 0.1,
