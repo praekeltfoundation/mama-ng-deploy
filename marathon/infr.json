@@ -26,7 +26,7 @@
         {
           "protocol": "HTTP",
           "path": "/health/",
-          "gracePeriodSeconds": 5,
+          "gracePeriodSeconds": 10,
           "intervalSeconds": 10,
           "timeoutSeconds": 5
         }
@@ -57,7 +57,7 @@
         {
           "protocol": "HTTP",
           "path": "/health/",
-          "gracePeriodSeconds": 5,
+          "gracePeriodSeconds": 10,
           "intervalSeconds": 10,
           "timeoutSeconds": 5
         }
