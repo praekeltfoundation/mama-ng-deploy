@@ -9,7 +9,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "vumi-http-api",
+          "image": "qa-mesos-persistence.za.prk-host.net:5000/vumi-http-api",
           "network": "BRIDGE",
           "portMappings": [
             {
@@ -40,7 +40,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "go-metrics-api",
+          "image": "qa-mesos-persistence.za.prk-host.net:5000/go-metrics-api",
           "network": "BRIDGE",
           "portMappings": [
             {
@@ -71,7 +71,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "vumi-metrics"
+          "image": "qa-mesos-persistence.za.prk-host.net:5000/vumi-metrics"
         }
       }
     }

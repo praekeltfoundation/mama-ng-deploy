@@ -10,7 +10,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "mama-ng-control",
+          "image": "qa-mesos-persistence.za.prk-host.net:5000/mama-ng-control",
           "network": "BRIDGE",
           "portMappings": [
             {
@@ -63,7 +63,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "mama-ng-control"
+          "image": "qa-mesos-persistence.za.prk-host.net:5000/mama-ng-control"
         }
       },
       "env": {
@@ -105,7 +105,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "mama-ng-control"
+          "image": "qa-mesos-persistence.za.prk-host.net:5000/mama-ng-control"
         }
       },
       "env": {
@@ -147,7 +147,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "mama-ng-contentstore"
+          "image": "qa-mesos-persistence.za.prk-host.net:5000/mama-ng-contentstore"
         },
         "network": "BRIDGE",
         "portMappings": [
@@ -186,7 +186,7 @@
       "container": {
         "type": "DOCKER",
         "docker": {
-          "image": "mama-ng-scheduler"
+          "image": "qa-mesos-persistence.za.prk-host.net:5000/mama-ng-scheduler"
         },
         "network": "BRIDGE",
         "portMappings": [
