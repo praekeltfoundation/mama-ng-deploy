@@ -45,7 +45,7 @@
       "parameters": [
         {
           "key": "add-host",
-          "value": "servicehost:172.17.0.1"
+          "value": "servicehost:172.17.42.1"
         }
       ],
       "labels": {
@@ -92,7 +92,7 @@
       "parameters": [
         {
           "key": "add-host",
-          "value": "servicehost:172.17.0.1"
+          "value": "servicehost:172.17.42.1"
         }
       ]
     },
@@ -134,7 +134,7 @@
       "parameters": [
         {
           "key": "add-host",
-          "value": "servicehost:172.17.0.1"
+          "value": "servicehost:172.17.42.1"
         }
       ]
     },
@@ -169,7 +169,7 @@
       "parameters": [
         {
           "key": "add-host",
-          "value": "servicehost:172.17.0.1"
+          "value": "servicehost:172.17.42.1"
         }
       ],
       "labels": {
@@ -202,7 +202,7 @@
       "parameters": [
         {
           "key": "add-host",
-          "value": "servicehost:172.17.0.1"
+          "value": "servicehost:172.17.42.1"
         }
       ],
       "labels": {
